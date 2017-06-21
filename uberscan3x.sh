@@ -27,8 +27,8 @@ xterm -hold -e "ubertooth-btle -U1 -A38 -f -c /tmp/ubertooth2" &
 xterm -hold -e "ubertooth-btle -U2 -A39 -f -c /tmp/ubertooth3" &
 echo "completed."
 echo "Launching wireshark instance to capture data from pipes. Capture will start automatically..."
+wireshark -k -i /tmp/ubertooth1 -i /tmp/ubertooth2 -i /tmp/ubertooth3 &
 sleep 2
-wireshark -k -i /tmp/ubertooth1 -i /tmp/ubertooth2 -i /tmp/ubertooth3
 echo "Press enter when ready in order to end and clean up."
 read foo
 echo "Cleaning up processess and removing pipes..."
